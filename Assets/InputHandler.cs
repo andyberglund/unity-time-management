@@ -20,28 +20,22 @@ public class InputHandler : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (nextInput >= sprites.Length) {
-			nextInput = 0;
-			foreach (var sprite in sprites) {
-				sprite.sprite = null;
-			}
-		}
-
 		if (Input.GetKeyDown(KeyCode.A)) {
 			sprites[nextInput].sprite = sprite1;
 			nextInput++;
-		}
-		if (Input.GetKeyDown(KeyCode.S)) {
+		} else if (Input.GetKeyDown(KeyCode.S)) {
 			sprites[nextInput].sprite = sprite2;
 			nextInput++;
-		}
-		if (Input.GetKeyDown(KeyCode.D)) {
+		} else if (Input.GetKeyDown(KeyCode.D)) {
 			sprites[nextInput].sprite = sprite3;
 			nextInput++;
-		}
-		if (Input.GetKeyDown(KeyCode.F)) {
+		} else if (Input.GetKeyDown(KeyCode.F)) {
 			sprites[nextInput].sprite = sprite4;
 			nextInput++;
+		}
+
+		if (nextInput >= sprites.Length) {
+			nextInput = 0;
 		}
 	}
 }
